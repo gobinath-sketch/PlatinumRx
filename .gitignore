@@ -1,0 +1,41 @@
+# Environment Variables
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.mypy_cache/
+.pytest_cache/
+
+# Streamlit
+.streamlit/
+
+# Excel
+# Keep the generated excel if requested, but usually ignored
+# Spreadsheets/Ticket_Analysis.xlsx
+
+# System
+.DS_Store
+Thumbs.db
+.gemini/
+.antigravityignore
+comprehensive_audit.py
+add_user_test.py
+dns_diagnostic.py
+final_pooler_test.py
+dns_check.py
+*.webp

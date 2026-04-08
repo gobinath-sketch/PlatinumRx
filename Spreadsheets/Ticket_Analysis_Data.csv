@@ -1,0 +1,21 @@
+cms_id,outlet_name,created_at,closed_at,priority_level,assigned_to,category,status
+1001,Downtown Store,2024-01-15 09:30:00,2024-01-15 16:45:00,High,John Smith,Technical Support,Closed
+1002,Uptown Branch,2024-01-15 10:15:00,2024-01-16 11:20:00,Medium,Sarah Johnson,Billing,Closed
+1003,Downtown Store,2024-01-15 14:20:00,2024-01-15 14:20:00,Low,Michael Brown,General Inquiry,Closed
+1004,Westside Mall,2024-01-16 08:45:00,2024-01-16 17:30:00,High,Emily Davis,Technical Support,Closed
+1005,Uptown Branch,2024-01-16 11:30:00,2024-01-17 09:15:00,Medium,Robert Wilson,Account Issues,Closed
+1006,Downtown Store,2024-01-17 09:00:00,2024-01-17 15:20:00,High,Lisa Anderson,Billing,Closed
+1007,Westside Mall,2024-01-17 13:45:00,2024-01-18 10:30:00,Low,James Taylor,General Inquiry,Closed
+1008,Uptown Branch,2024-01-18 10:20:00,2024-01-18 16:45:00,Medium,Patricia Moore,Technical Support,Closed
+1009,Downtown Store,2024-01-18 14:30:00,2024-01-19 09:00:00,High,Christopher Jackson,Account Issues,Closed
+1010,Westside Mall,2024-01-19 08:15:00,2024-01-19 08:15:00,Low,Nancy White,Billing,Closed
+1011,Uptown Branch,2024-01-19 11:45:00,2024-01-20 14:20:00,Medium,Daniel Harris,Technical Support,Closed
+1012,Downtown Store,2024-01-20 09:30:00,2024-01-20 17:00:00,High,Betty Martin,General Inquiry,Closed
+1013,Westside Mall,2024-01-20 13:15:00,2024-01-21 10:45:00,Medium,Thomas Thompson,Account Issues,Closed
+1014,Uptown Branch,2024-01-21 08:00:00,2024-01-21 08:00:00,Low,Karen Garcia,Billing,Closed
+1015,Downtown Store,2024-01-21 10:30:00,2024-01-22 16:15:00,High,Paul Martinez,Technical Support,Closed
+1016,Westside Mall,2024-01-22 09:45:00,2024-01-22 09:45:00,Low,Steven Robinson,General Inquiry,Closed
+1017,Uptown Branch,2024-01-22 14:20:00,2024-01-23 11:30:00,Medium,Helen Clark,Account Issues,Closed
+1018,Downtown Store,2024-01-23 07:30:00,2024-01-23 15:45:00,High,William Rodriguez,Billing,Closed
+1019,Westside Mall,2024-01-23 12:00:00,2024-01-24 09:20:00,Medium,Maria Lewis,Technical Support,Closed
+1020,Uptown Branch,2024-01-24 08:15:00,2024-01-24 08:15:00,Low,Carol Lee,General Inquiry,Closed

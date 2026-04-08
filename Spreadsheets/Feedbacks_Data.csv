@@ -1,0 +1,21 @@
+feedback_id,cms_id,rating,comment,feedback_date,customer_name,contact_email
+F001,1001,5,"Excellent technical support! John was very knowledgeable and resolved my issue quickly.",2024-01-16,James Anderson,james.anderson@email.com
+F002,1002,4,"Good billing assistance, but took longer than expected to resolve.",2024-01-17,Sarah Williams,sarah.williams@email.com
+F003,1003,3,"General inquiry was answered satisfactorily, nothing exceptional.",2024-01-15,Michael Brown,michael.brown@email.com
+F004,1004,5,"Outstanding support from Emily! She went above and beyond to help with my technical issue.",2024-01-17,Emma Davis,emma.davis@email.com
+F005,1005,4,"Robert was helpful with my account issues, resolution was satisfactory.",2024-01-18,Robert Miller,robert.miller@email.com
+F006,1006,5,"Lisa provided excellent billing support, very professional and efficient!",2024-01-18,David Wilson,david.wilson@email.com
+F007,1007,2,"Wait time was too long for a simple inquiry, needs improvement.",2024-01-19,Jennifer Taylor,jennifer.taylor@email.com
+F008,1008,4,"Sarah did a good job with technical support, issue was resolved properly.",2024-01-19,William Anderson,william.anderson@email.com
+F009,1009,5,"Christopher provided exceptional account support, very thorough!",2024-01-20,Maria Thomas,maria.thomas@email.com
+F010,1010,3,"Billing question was answered, but customer service could be more friendly.",2024-01-20,Christopher Jackson,christopher.jackson@email.com
+F011,1011,4,"Daniel is very knowledgeable in technical support, good experience overall.",2024-01-21,Patricia White,patricia.white@email.com
+F012,1012,5,"Betty provided excellent general inquiry support, very patient and helpful!",2024-01-21,Daniel Harris,daniel.harris@email.com
+F013,1013,4,"Thomas helped well with account issues, though it took some time to resolve.",2024-01-22,Nancy Martin,nancy.martin@email.com
+F014,1014,3,"Billing support was okay, but I expected faster response time.",2024-01-22,Thomas Thompson,thomas.thompson@email.com
+F015,1015,5,"Paul is amazing at technical support! Fixed my issue immediately.",2024-01-23,Karen Robinson,karen.robinson@email.com
+F016,1016,2,"General inquiry response was slow, and the agent seemed rushed.",2024-01-23,Steven Clark,steven.clark@email.com
+F017,1017,4,"Helen provided good account support, professional and courteous.",2024-01-24,Helen Rodriguez,helen.rodriguez@email.com
+F018,1018,5,"William is excellent in billing support! Very detailed and helpful.",2024-01-25,William Rodriguez,william.rodriguez@email.com
+F019,1019,4,"Maria provided good technical support, issue was resolved satisfactorily.",2024-01-25,Maria Lewis,maria.lewis@email.com
+F020,1020,3,"General inquiry was handled adequately, but room for improvement in communication.",2024-01-25,Carol Lee,carol.lee@email.com
