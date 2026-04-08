@@ -222,21 +222,34 @@ elif page == "➕ Data Entry":
         with st.form("hotel_form"):
             user_id = st.number_input("User ID", min_value=1)
             room = st.text_input("Room Number")
+            check_in = st.date_input("Check-in Date", value=datetime.today())
+            check_out = st.date_input("Check-out Date", value=datetime.today())
             amount = st.number_input("Amount", min_value=0.0)
             submitted = st.form_submit_button("Book & Save")
             if submitted:
-                conn = get_connection()
-                if conn:
-                    try:
-                        cur = conn.cursor()
-                        cur.execute("INSERT INTO bookings (user_id, room_number, check_in_date) VALUES (%s, %s, CURRENT_DATE) RETURNING booking_id", (user_id, room))
-                        b_id = cur.fetchone()[0]
-                        cur.execute("INSERT INTO booking_commercials (booking_id, item_id, quantity, total_amount) VALUES (%s, 1, 1, %s)", (b_id, amount))
-                        conn.commit()
-                        st.success(f"✅ Record saved! User {user_id} added in real-time.")
-                        conn.close()
-                    except Exception as e:
-                        st.error(f"DB Error: {e}")
+                if check_out < check_in:
+                    st.error("❌ Check-out date cannot be before check-in date.")
+                else:
+                    conn = get_connection()
+                    if conn:
+                        try:
+                            cur = conn.cursor()
+                            # Insert into bookings table with ALL required fields
+                            cur.execute(
+                                "INSERT INTO bookings (user_id, room_number, check_in_date, check_out_date, status) VALUES (%s, %s, %s, %s, 'Confirmed') RETURNING booking_id", 
+                                (user_id, room, check_in, check_out)
+                            )
+                            b_id = cur.fetchone()[0]
+                            # Insert a room charge record into booking_commercials (rate = amount)
+                            cur.execute(
+                                "INSERT INTO booking_commercials (booking_id, item_id, quantity, rate) VALUES (%s, 1, 1, %s)", 
+                                (b_id, amount)
+                            )
+                            conn.commit()
+                            st.success(f"✅ Record saved! Room {room} booked successfully. Booking ID: {b_id}")
+                            conn.close()
+                        except Exception as e:
+                            st.error(f"DB Error: {e}")
 
     elif entry_type == "Clinic Sale":
         with st.form("clinic_form"):
