@@ -258,21 +258,40 @@ elif page == "➕ Data Entry":
 
     elif entry_type == "Clinic Sale":
         with st.form("clinic_form"):
-            pat_name = st.text_input("Patient Name")
-            doc_name = st.text_input("Doctor Name")
-            amount = st.number_input("Amount", min_value=0.0)
-            submitted = st.form_submit_button("Record Sale")
+            col1, col2 = st.columns(2)
+            with col1:
+                pat_id = st.text_input("Patient ID (e.g. P021)", placeholder="P021")
+                pat_name = st.text_input("Patient Name", placeholder="John Doe")
+                service_type = st.selectbox("Service Type", [
+                    "General Consultation", "Specialist Consultation",
+                    "Dental Checkup", "Pediatric Consultation", "Other"
+                ])
+            with col2:
+                doc_name = st.text_input("Doctor Name", placeholder="Dr. Smith")
+                sales_channel = st.selectbox("Sales Channel", [
+                    "Walk-in", "Online Booking", "Phone Appointment", "Referral"
+                ])
+                amount = st.number_input("Amount (₹)", min_value=0.0, value=150.0)
+            submitted = st.form_submit_button("💊 Record Sale")
             if submitted:
-                conn = get_connection()
-                if conn:
-                    try:
-                        cur = conn.cursor()
-                        cur.execute("INSERT INTO clinic_sales (patient_name, doctor_name, amount, consultation_date) VALUES (%s, %s, %s, CURRENT_DATE)", (pat_name, doc_name, amount))
-                        conn.commit()
-                        st.success(f"✅ Real-Time Sale recorded for {pat_name}!")
-                        conn.close()
-                    except Exception as e:
-                        st.error(f"DB Error: {e}")
+                if not pat_id or not pat_name or not doc_name:
+                    st.error("❌ Patient ID, Patient Name, and Doctor Name are required.")
+                else:
+                    conn = get_connection()
+                    if conn:
+                        try:
+                            cur = conn.cursor()
+                            cur.execute(
+                                """INSERT INTO clinic_sales 
+                                   (patient_id, patient_name, service_type, doctor_name, sales_channel, amount, consultation_date, payment_status)
+                                   VALUES (%s, %s, %s, %s, %s, %s, CURRENT_DATE, 'Paid')""",
+                                (pat_id, pat_name, service_type, doc_name, sales_channel, amount)
+                            )
+                            conn.commit()
+                            st.success(f"✅ Real-Time Sale recorded for {pat_name} (ID: {pat_id})!")
+                            conn.close()
+                        except Exception as e:
+                            st.error(f"DB Error: {e}")
 
 st.markdown("---")
 st.caption("PlatinumRx Data Analyst Portfolio Tool | 100% Real-Time Integrated.")
