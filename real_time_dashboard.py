@@ -112,29 +112,42 @@ def run_query(query, params=None):
     return None
 
 # =========================================================
-# PAGE: CONNECTION SETTINGS
+# PAGE: CONNECTION SETTINGS (Secure - Never exposes credentials)
 # =========================================================
 if page == "🔧 Connection Settings":
-    st.title("🔧 Database Connectivity Manager")
-    st.info("If you are seeing 'DNS' or 'Network' errors, use this section to bridge your connection.")
-    
-    new_url = st.text_input("Supabase Connection String (IPv4 Pooler Recommended)", value=st.session_state.custom_db_url)
-    if st.button("Apply & Test Connection"):
+    st.title("🔧 System Status")
+    st.info("This page shows the current connection health. Credentials are stored securely in Streamlit Secrets and are never exposed.")
+
+    st.markdown("---")
+
+    # Only test the connection - never display the URL
+    conn = get_connection()
+    if conn:
+        st.success("✅ **Database:** Connected to Supabase PostgreSQL")
         try:
-            test_conn = psycopg2.connect(new_url, connect_timeout=5)
-            st.session_state.custom_db_url = new_url
-            st.success("✅ Connected Successfully! Real-Time link established.")
-            test_conn.close()
-            st.rerun()
+            cur = conn.cursor()
+            cur.execute("SELECT COUNT(*) FROM users")
+            user_count = cur.fetchone()[0]
+            cur.execute("SELECT COUNT(*) FROM bookings")
+            booking_count = cur.fetchone()[0]
+            cur.execute("SELECT COUNT(*) FROM clinic_sales")
+            clinic_count = cur.fetchone()[0]
+            conn.close()
+
+            col1, col2, col3 = st.columns(3)
+            col1.metric("👥 Users", user_count)
+            col2.metric("🏨 Bookings", booking_count)
+            col3.metric("🏥 Clinic Sales", clinic_count)
         except Exception as e:
-            st.error(f"❌ Connection Failed: {e}")
-            st.markdown("""
-            **💡 Hint:** Use the **Transaction Pooler** string from **Supabase Dashboard > Settings > Database**.
-            """)
-    
+            st.warning(f"Connected, but query failed: {e}")
+    else:
+        st.error("❌ **Database:** Connection failed. Check Streamlit Secrets configuration.")
+
     st.markdown("---")
     st.write("🔧 **Engine:** PostgreSQL (psycopg2-binary)")
-    st.write("🌐 **IPv6 Address:** `[2406:da14:271:9921:64a7:b634:3a27:1c5c]`")
+    st.write("🔒 **Security:** Credentials loaded from Streamlit Secrets (never exposed in UI)")
+    st.write("☁️ **Host:** Supabase (AWS ap-northeast-1)")
+
 
 # =========================================================
 # PAGE: HOME
