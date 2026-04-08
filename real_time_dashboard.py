@@ -55,16 +55,21 @@ st.markdown("""
 
 import os
 
-# Securely load environment variables from .env
-if os.path.exists(".env"):
-    with open(".env") as f:
-        for line in f:
-            if "=" in line:
-                key, value = line.split("=", 1)
-                os.environ[key.strip()] = value.strip().strip('"').strip("'")
-
-# Verified Supabase Connection (Loaded from .env)
-DB_URL_DEFAULT = os.getenv("DB_URL")
+# =========================================================
+# CREDENTIAL LOADING (Supports both Local .env & Streamlit Cloud)
+# =========================================================
+# Priority 1: Streamlit Cloud Secrets (for deployed app)
+try:
+    DB_URL_DEFAULT = st.secrets["DB_URL"]
+except Exception:
+    # Priority 2: Local .env file (for local development)
+    if os.path.exists(".env"):
+        with open(".env") as f:
+            for line in f:
+                if "=" in line and not line.startswith("#"):
+                    key, value = line.split("=", 1)
+                    os.environ[key.strip()] = value.strip().strip('"').strip("'")
+    DB_URL_DEFAULT = os.getenv("DB_URL", "")
 
 if "custom_db_url" not in st.session_state:
     st.session_state.custom_db_url = DB_URL_DEFAULT
