@@ -236,7 +236,7 @@ elif page == "➕ Data Entry":
                             cur = conn.cursor()
                             # Insert into bookings table with ALL required fields
                             cur.execute(
-                                "INSERT INTO bookings (user_id, room_number, check_in_date, check_out_date, status) VALUES (%s, %s, %s, %s, 'Confirmed') RETURNING booking_id", 
+                                "INSERT INTO bookings (user_id, room_number, check_in_date, check_out_date, total_amount, status) VALUES (%s, %s, %s, %s, 0, 'Confirmed') RETURNING booking_id", 
                                 (user_id, room, check_in, check_out)
                             )
                             b_id = cur.fetchone()[0]
