@@ -17,41 +17,41 @@
 ---
 live stramlit ui pushed link access thorugh here -->>     https://platinumrx-qb5sa7hbadxtim78y6kpwg.streamlit.app
 
-## 📖 Table of Contents
+##  Table of Contents
 
-- [🧠 Project Overview](#-project-overview)
-- [🏗️ System Architecture](#️-system-architecture)
-- [🚀 Quick Start](#-quick-start)
-- [🗄️ Database Module (SQL)](#️-database-module-sql)
-  - [🏨 Hotel Management System](#-hotel-management-system)
-  - [🏥 Clinic Management System](#-clinic-management-system)
-- [📊 Real-Time BI Dashboard](#-real-time-bi-dashboard)
-- [📈 Spreadsheet Automation (Excel)](#-spreadsheet-automation-excel)
-- [🐍 Python Utility Scripts](#-python-utility-scripts)
-- [🧪 System Audit & Testing](#-system-audit--testing)
-- [📁 Project Structure](#-project-structure)
-- [🖼️ Visual Proof](#️-visual-proof)
-- [🔒 Security](#-security)
+- [ Project Overview](#-project-overview)
+- [ System Architecture](#️-system-architecture)
+- [ Quick Start](#-quick-start)
+- [ Database Module (SQL)](#️-database-module-sql)
+  - [ Hotel Management System](#-hotel-management-system)
+  - [ Clinic Management System](#-clinic-management-system)
+- [ Real-Time BI Dashboard](#-real-time-bi-dashboard)
+- [ Spreadsheet Automation (Excel)](#-spreadsheet-automation-excel)
+- [ Python Utility Scripts](#-python-utility-scripts)
+- [ System Audit & Testing](#-system-audit--testing)
+- [ Project Structure](#-project-structure)
+- [ Visual Proof](#️-visual-proof)
+- [ Security](#-security)
 
 ---
 
-## 🧠 Project Overview
+##  Project Overview
 
 **PlatinumRx** is a full-spectrum data analytics portfolio project. It transforms a standard business analyst assignment into a **production-ready, enterprise-grade BI ecosystem** with the following capabilities:
 
 | Capability | Technology | Status |
 |---|---|---|
-| Live Database Backend | Supabase (PostgreSQL) | ✅ Connected |
-| Advanced SQL Analytics | 10 Analytical Queries (Part A + B) | ✅ Implemented |
-| Real-Time BI Dashboard | Streamlit + Plotly | ✅ Live |
-| Spreadsheet Automation | Python → Excel (openpyxl/xlsxwriter) | ✅ Automated |
-| Python Utility Scripting | Custom OOP Classes | ✅ Verified |
-| Live Data Entry | Real-time DB INSERT via Dashboard | ✅ Functional |
-| End-to-End Audit | Automated Test Suite | ✅ Passing |
+| Live Database Backend | Supabase (PostgreSQL) |  Connected |
+| Advanced SQL Analytics | 10 Analytical Queries (Part A + B) |  Implemented |
+| Real-Time BI Dashboard | Streamlit + Plotly |  Live |
+| Spreadsheet Automation | Python → Excel (openpyxl/xlsxwriter) |  Automated |
+| Python Utility Scripting | Custom OOP Classes |  Verified |
+| Live Data Entry | Real-time DB INSERT via Dashboard |  Functional |
+| End-to-End Audit | Automated Test Suite |  Passing |
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -79,7 +79,7 @@ live stramlit ui pushed link access thorugh here -->>     https://platinumrx-qb5
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -110,13 +110,13 @@ streamlit run real_time_dashboard.py
 
 ---
 
-## 🗄️ Database Module (SQL)
+##  Database Module (SQL)
 
 The database layer consists of two fully independent management systems deployed on Supabase (PostgreSQL).
 
 ---
 
-### 🏨 Hotel Management System
+###  Hotel Management System
 
 **Schema Files:** `SQL/01_Hotel_Schema_Setup.sql`
 
@@ -147,7 +147,7 @@ The database layer consists of two fully independent management systems deployed
 
 **Seed Data:** 20 Users | 20 Items | 20 Bookings | 25 Commercial Records
 
-#### 📋 Hotel Analytics Queries — Part A (`SQL/02_Hotel_Queries.sql`)
+####  Hotel Analytics Queries — Part A (`SQL/02_Hotel_Queries.sql`)
 
 | # | Business Question | SQL Technique |
 |---|---|---|
@@ -160,7 +160,7 @@ The database layer consists of two fully independent management systems deployed
 
 ---
 
-### 🏥 Clinic Management System
+###  Clinic Management System
 
 **Schema Files:** `SQL/03_Clinic_Schema_Setup.sql`
 
@@ -189,7 +189,7 @@ The database layer consists of two fully independent management systems deployed
 
 **Seed Data:** 5 Clinics | 10 Doctors | 25 Sales Records | 15 Expense Records
 
-#### 📋 Clinic Analytics Queries — Part B (`SQL/04_Clinic_Queries.sql`)
+####  Clinic Analytics Queries — Part B (`SQL/04_Clinic_Queries.sql`)
 
 | # | Business Question | SQL Technique |
 |---|---|---|
@@ -201,7 +201,7 @@ The database layer consists of two fully independent management systems deployed
 
 ---
 
-## 📊 Real-Time BI Dashboard
+##  Real-Time BI Dashboard
 
 **File:** `real_time_dashboard.py`
 
@@ -211,10 +211,10 @@ The dashboard is a **4-page Streamlit application** with direct database connect
 
 ```
 Sidebar Navigation
-├── 🏠 Home          — DB connectivity status & system overview
-├── 🏨 Hotel Analytics — Live KPIs + Item popularity charts (Part A)
-├── 🏥 Clinic Analytics — Monthly P&L trend lines (Part B)
-└── ➕ Data Entry    — Live INSERT forms for Hotel & Clinic data
+├──  Home          — DB connectivity status & system overview
+├──  Hotel Analytics — Live KPIs + Item popularity charts (Part A)
+├──  Clinic Analytics — Monthly P&L trend lines (Part B)
+└──  Data Entry    — Live INSERT forms for Hotel & Clinic data
 ```
 
 ### Data Entry Flow
@@ -244,7 +244,7 @@ streamlit run real_time_dashboard.py
 
 ---
 
-## 📈 Spreadsheet Automation (Excel)
+##  Spreadsheet Automation (Excel)
 
 **File:** `generate_excel.py`
 **Output:** `Spreadsheets/Ticket_Analysis.xlsx`
@@ -270,7 +270,7 @@ py generate_excel.py
 
 ---
 
-## 🐍 Python Utility Scripts
+##  Python Utility Scripts
 
 ### `Python/01_Time_Converter.py` — TimeConverter Class
 
@@ -313,7 +313,7 @@ py Python/02_Remove_Duplicates.py interactive                 # → Interactive 
 
 ---
 
-## 🧪 System Audit & Testing
+##  System Audit & Testing
 
 A dedicated automated audit script validates **all four modules** simultaneously.
 
@@ -325,64 +325,64 @@ py Test_Files/comprehensive_audit.py
 
 ```
 ============================================================
-💎 PLATINUMRX END-TO-END SYSTEM AUDIT 💎
+ PLATINUMRX END-TO-END SYSTEM AUDIT 
 ============================================================
 
 [1/4] Auditing Database Connectivity...
-✅ Hotel System: Verified. Total Revenue = $19,045.00
-✅ Clinic System: Verified. Total Consultations = 25
-✅ Users Table: Verified. Current Count = 22
+ Hotel System: Verified. Total Revenue = $19,045.00
+ Clinic System: Verified. Total Consultations = 25
+ Users Table: Verified. Current Count = 22
 
 [2/4] Auditing Python Utilities...
-✅ Time Converter: Verified. 130 min -> '2 hrs 10 mins'
-✅ Duplicate Remover: Verified. 'programming' -> 'progamin'
+ Time Converter: Verified. 130 min -> '2 hrs 10 mins'
+ Duplicate Remover: Verified. 'programming' -> 'progamin'
 
 [3/4] Auditing Spreadsheet Generation...
-✅ Excel Generation: Verified. Created Spreadsheets/Ticket_Analysis.xlsx
+ Excel Generation: Verified. Created Spreadsheets/Ticket_Analysis.xlsx
 
 [4/4] Auditing Codebase Integrity...
-✅ SQL Syntax: Audited.
-✅ Real-Time Dashboard Logic: Audited.
-✅ Error Handling: Audited.
+ SQL Syntax: Audited.
+ Real-Time Dashboard Logic: Audited.
+ Error Handling: Audited.
 
 ============================================================
-✨ AUDIT COMPLETE: ALL SYSTEMS NOMINAL ✨
+ AUDIT COMPLETE: ALL SYSTEMS NOMINAL 
 ============================================================
 ```
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 PlatinumRx/
 │
-├── 📄 README.md                        ← You are here
-├── 🔐 .env                             ← Credentials (git-ignored)
-├── 🔐 .gitignore                       ← Security manifest
+├──  README.md                        ← You are here
+├──  .env                             ← Credentials (git-ignored)
+├──  .gitignore                       ← Security manifest
 │
-├── 🗃️ SQL/
+├──  SQL/
 │   ├── 01_Hotel_Schema_Setup.sql       ← Hotel tables + 20 seed records
 │   ├── 02_Hotel_Queries.sql            ← 5 Hotel analytical queries (Part A)
 │   ├── 03_Clinic_Schema_Setup.sql      ← Clinic tables + seed data
 │   └── 04_Clinic_Queries.sql           ← 5 Clinic analytical queries (Part B)
 │
-├── 🐍 Python/
+├──  Python/
 │   ├── 01_Time_Converter.py            ← Minutes-to-hours converter class
 │   └── 02_Remove_Duplicates.py         ← String duplicate remover class
 │
-├── 📊 Spreadsheets/
+├──  Spreadsheets/
 │   ├── Feedbacks_Data.csv              ← Source data (feedback)
 │   ├── Ticket_Analysis_Data.csv        ← Source data (tickets)
 │   └── Ticket_Analysis.xlsx            ← AUTO-GENERATED professional report
 │
-├── 📋 Reports/
+├──  Reports/
 │   ├── COMPREHENSIVE_TEST_REPORT.md    ← Full test results
 │   ├── Google_Sheets_Analysis_Guide.md ← Spreadsheet methodology guide
 │   ├── Supabase_Setup_Guide.md         ← DB connection guide
 │   └── TEST_REPORT.md                  ← Summary test report
 │
-├── 🖼️ images/
+├──  images/
 │   ├── web_screenshots/                ← Dashboard visual proof
 │   │   ├── home.png
 │   │   ├── hotel_analytics.png
@@ -393,20 +393,20 @@ PlatinumRx/
 │       ├── Screenshot 2026-04-08 211247.png
 │       └── Screenshot 2026-04-08 211326.png
 │
-├── 🎥 Screen_Records/
+├──  Screen_Records/
 │   └── Full_System_Walkthrough.webp    ← End-to-end live demo recording
 │
-├── 🧪 Test_Files/
+├──  Test_Files/
 │   └── comprehensive_audit.py          ← Automated 4-module audit script
 │
-├── 🚀 real_time_dashboard.py           ← Streamlit BI dashboard (main app)
-├── ⚙️  db_setup.py                     ← Database initializer
-└── 📊 generate_excel.py                ← Excel automation engine
+├──  real_time_dashboard.py           ← Streamlit BI dashboard (main app)
+├──   db_setup.py                     ← Database initializer
+└──  generate_excel.py                ← Excel automation engine
 ```
 
 ---
 
-## 🖼️ Visual Proof
+##  Visual Proof
 
 All screenshots are stored in the `images/` directory for submission evidence.
 
@@ -423,7 +423,7 @@ All screenshots are stored in the `images/` directory for submission evidence.
 
 ---
 
-## 🔒 Security
+##  Security
 
 | Item | Status |
 |---|---|
@@ -435,8 +435,6 @@ All screenshots are stored in the `images/` directory for submission evidence.
 
 <div align="center">
 
-**Developed with ❤️ and Precision**
-
-*PlatinumRx Data Analyst Portfolio — Production-Grade, Real-Time, Zero Compromise.*
+PlatinumRx Data Analyst Portfolio — Production-Grade, Real-Time, Zero Compromise.
 
 </div>
