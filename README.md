@@ -1,6 +1,6 @@
 <div align="center">
 
-# 💎 PlatinumRx — Real-Time Business Intelligence Ecosystem
+# PlatinumRx — Real-Time Business Intelligence Ecosystem
 
 ### A Production-Grade Data Analytics Platform
 
